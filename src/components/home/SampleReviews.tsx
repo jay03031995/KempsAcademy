@@ -1,0 +1,3 @@
+import { getCmsContent } from "@/lib/cms";
+
+export async function SampleReviews(){const {testimonials}=await getCmsContent();if(!testimonials.length)return null;return <section className="reviews-section"><div className="content-container"><div className="section-heading"><div><p className="eyebrow">LEARNER PERSPECTIVES</p><h2>A few words about the experience</h2></div></div><div className="reviews-grid">{testimonials.map(r=><article className="review-card" key={r._id}><blockquote>“{r.quote}”</blockquote><div className="review-person"><div><h3>{r.studentName}</h3>{r.batchLabel&&<p>{r.batchLabel}</p>}</div></div></article>)}</div></div></section>}

@@ -1,0 +1,7 @@
+import Link from 'next/link';
+import {PageHero} from '@/components/ui/PageHero';
+import {BatchList} from '@/components/programme/BatchList';
+import {getCmsContent} from '@/lib/cms';
+import {buildMetadata} from '@/lib/seo';
+export const metadata=buildMetadata({title:'Upcoming batches',description:'Plan your learning with Kemps admissions.',path:'/batches'});
+export default async function Page(){const {batches}=await getCmsContent();const today=new Date().toISOString().slice(0,10);const upcoming=batches.filter(batch=>batch.startDate>=today).sort((a,b)=>a.startDate.localeCompare(b.startDate));return <><PageHero eyebrow="PLAN YOUR LEARNING" title="Make room for your next step." description="Explore confirmed training dates. Our team can help you find a schedule and format that works for you." crumbs={[{name:'Upcoming batches',path:'/batches'}]} image="/images/indian/indian-clinical-training.jpg"/><section className="content-container inner-section"><div className="section-heading"><div><h2>Upcoming training dates</h2><p>Please confirm availability and the training venue before making travel plans.</p></div></div><BatchList batches={upcoming}/>{!upcoming.length&&<div className="schedule-cta"><h3>Let us help you plan ahead</h3><p>Tell us which programme you’re interested in and we’ll share the next available dates.</p><Link className="gold-button" href="/admissions">Enquire about the next batch</Link></div>}</section></>}

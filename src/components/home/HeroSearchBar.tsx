@@ -1,0 +1,4 @@
+'use client';
+import {useState,type FormEvent} from 'react';
+import {useRouter} from 'next/navigation';
+export function HeroSearchBar(){const router=useRouter();const [value,setValue]=useState('');function submit(e:FormEvent){e.preventDefault();router.push(value.trim()?'/courses?q='+encodeURIComponent(value.trim()):'/courses');}return <form onSubmit={submit} role="search" className="discovery-search"><label htmlFor="hero-search" className="sr-only">Search courses, workshops, and topics</label><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" strokeWidth="1.5"/><path d="m13 13 4 4" stroke="currentColor" strokeWidth="1.5"/></svg><input id="hero-search" type="search" placeholder="What would you like to learn?" value={value} onChange={e=>setValue(e.target.value)}/><button aria-label="Search programmes" type="submit">Search</button></form>}

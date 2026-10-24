@@ -1,0 +1,9 @@
+import {notFound} from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
+import {getCmsContent} from '@/lib/cms';
+import {Breadcrumbs} from '@/components/ui/Breadcrumbs';
+import {buildMetadata} from '@/lib/seo';
+export async function generateStaticParams(){return (await getCmsContent()).trainers.map(t=>({slug:t.slug}));}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const t=(await getCmsContent()).trainers.find(item=>item.slug===slug);return buildMetadata({title:t?.name||'Faculty profile',description:t?.experienceSummary||'Kemps faculty',path:'/trainers/'+slug});}
+export default async function Page({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const t=(await getCmsContent()).trainers.find(item=>item.slug===slug);if(!t)notFound();return <div className="content-container faculty-profile"><Breadcrumbs items={[{name:'Home',path:'/'},{name:'Our faculty',path:'/trainers'},{name:t.name,path:'/trainers/'+t.slug}]}/><div className="faculty-profile-header"><div className="faculty-profile-portrait"><Image src={t.portrait.url} alt={t.portrait.alt} fill sizes="180px" className="object-cover" priority/></div><div><p className="section-kicker">FACULTY PROFILE</p><h1>{t.name}</h1><p className="faculty-profile-degree">{t.credentials}</p><p className="faculty-profile-position">Faculty · Kemps Academy</p><p className="faculty-profile-summary">{t.experienceSummary}</p></div></div><div className="faculty-profile-content"><article><h2>About {t.name}</h2>{t.biography.map(p=><p key={p}>{p}</p>)}<h2>Areas of interest</h2><ul>{t.teachingAreas.map(area=><li key={area}>{area}</li>)}</ul></article><aside><h3>Plan your learning</h3><p>Explore programmes and ask the team about eligibility, formats and faculty arrangements.</p><Link href="/courses">Explore programmes </Link><Link href="/admissions">Speak to admissions </Link></aside></div></div>}

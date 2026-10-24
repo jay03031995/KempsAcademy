@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="64" viewBox="0 0 240 64">
+  <rect width="240" height="64" fill="#faf7f4"/>
+  <g transform="translate(14,12)">
+    <path d="M20 3c4.2 2.4 6.6 6.7 6.6 11.3 0 4-2.4 7.2-6.6 7.2s-6.6-3.2-6.6-7.2C13.4 9.7 15.8 5.4 20 3z" fill="#4b243d"/>
+    <path d="M20 15.2c4.3-1.2 8.7.2 11.7 3.6 2.8 3.1 3.5 7.3.9 10-2.6 2.7-7 2.1-10-0.8-3.1-2.9-4.3-8-2.6-12.8z" fill="#b89461" opacity="0.9"/>
+    <path d="M20 15.2c-4.3-1.2-8.7.2-11.7 3.6-2.8 3.1-3.5 7.3-.9 10 2.6 2.7 7 2.1 10-0.8 3.1-2.9 4.3-8 2.6-12.8z" fill="#4b243d" opacity="0.75"/>
+  </g>
+  <text x="56" y="30" font-family="Poppins, Arial, sans-serif" font-weight="600" font-size="20" fill="#4b243d">KEMPS</text>
+  <text x="56" y="46" font-family="Poppins, Arial, sans-serif" font-weight="500" font-size="10" letter-spacing="2.5" fill="#9c7c4e">ACADEMY</text>
+</svg>
