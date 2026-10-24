@@ -192,3 +192,35 @@ header a[href='/admissions']{background:#c8a24d;color:#171717;border-radius:5px;
 .page-hero-image img{object-position:50% 30%;}
 .instructor-photo img{object-position:50% 25%;}
 @media(max-width:767px){.hero-photo-credit{font-size:8px;right:10px;bottom:6px;}.discovery-search button{font-size:11px;min-width:65px;padding:0 12px;}.discovery-hero>img{object-position:48% 50%;}}
+
+/* Single featured faculty profile on the homepage. */
+.instructors-section.content-container{width:100%;max-width:none;margin:0;padding:82px max(24px,calc((100vw - 1240px)/2));background:#f7f7f3;}
+.instructors-heading{max-width:660px;margin-bottom:34px;}
+.instructors-heading .section-kicker{font-size:11px;font-weight:650;letter-spacing:.16em;color:#98742a;margin-bottom:13px;}
+.instructors-section> .instructors-heading h2{font-size:clamp(34px,4vw,54px);font-weight:450;line-height:1.08;letter-spacing:-.045em;color:#20251c;}
+.instructors-section> .instructors-heading h2 span{color:#7d885f;}
+.instructors-intro{font-size:15px;line-height:1.75;color:#72756b;max-width:510px;margin-top:15px;}
+.instructor-feature{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(36px,6vw,88px);align-items:center;}
+.instructor-feature-photo{position:relative;aspect-ratio:.91;min-height:450px;overflow:hidden;border-radius:24px 24px 24px 72px;background:#e9e5dc;box-shadow:0 22px 60px #20251c12;}
+.instructor-feature-photo img{object-position:50% 18%;}
+.instructor-photo-caption{position:absolute;left:18px;top:18px;display:flex;align-items:center;gap:11px;padding:11px 15px;border:1px solid #ffffffa8;border-radius:999px;background:#fffffff0;color:#65704e;font-size:10px;font-weight:650;letter-spacing:.15em;box-shadow:0 5px 20px #0000000c;}
+.instructor-photo-caption span:first-child{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#28331f;color:#fff;font-size:11px;letter-spacing:0;}
+.instructor-feature-copy{padding:24px 0;}
+.instructor-specialty{font-size:10px;font-weight:650;letter-spacing:.18em;text-transform:uppercase;color:#79875e;}
+.instructor-specialty span{padding:0 6px;color:#bea45f;}
+.instructor-feature-copy h3{font-size:clamp(34px,4vw,58px);font-weight:450;line-height:1.08;letter-spacing:-.045em;color:#28331f;margin-top:17px;}
+.instructor-feature-credentials{font-size:12px;line-height:1.65;letter-spacing:.07em;text-transform:uppercase;color:#7b845f;margin-top:12px;}
+.instructor-feature-bio{max-width:640px;font-size:16px;line-height:1.8;color:#717469;margin-top:23px;}
+.instructor-credentials{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px;}
+.instructor-credentials>div{min-height:94px;padding:17px 15px;border:1px solid #dfe2d3;border-radius:16px;background:#ffffffa8;display:flex;flex-direction:column;justify-content:center;gap:8px;}
+.instructor-credentials strong{font-size:19px;line-height:1.2;font-weight:500;color:#303a27;}
+.instructor-credentials span{font-size:9px;letter-spacing:.12em;color:#888d7e;}
+.instructor-feature-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:29px;}
+.instructor-profile-link,.instructor-courses-link{display:inline-flex;min-height:48px;align-items:center;justify-content:center;gap:18px;padding:0 22px;border:1px solid #29331f;border-radius:999px;font-size:12px;font-weight:550;transition:background .2s,color .2s,transform .2s;}
+.instructor-profile-link{background:#29331f;color:#fff;}
+.instructor-profile-link:hover{background:#445239;transform:translateY(-1px);}
+.instructor-profile-link span{font-size:17px;line-height:1;}
+.instructor-courses-link{color:#29331f;}
+.instructor-courses-link:hover{background:#29331f;color:#fff;}
+@media(max-width:900px){.instructor-feature{gap:34px;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);}.instructor-feature-photo{min-height:390px;border-bottom-left-radius:48px;}.instructor-feature-bio{font-size:14px;}.instructor-credentials{gap:8px;}.instructor-credentials>div{padding:14px 11px;}.instructor-credentials strong{font-size:16px;}}
+@media(max-width:767px){.instructors-section.content-container{padding:54px 20px 58px;}.instructors-heading{margin-bottom:26px;}.instructors-section> .instructors-heading h2{font-size:36px;max-width:390px;}.instructors-intro{font-size:13px;line-height:1.7;margin-top:12px;}.instructor-feature{grid-template-columns:1fr;gap:25px;}.instructor-feature-photo{aspect-ratio:.95;min-height:0;max-height:510px;border-radius:20px 20px 20px 54px;}.instructor-feature-copy{padding:0;}.instructor-specialty{font-size:9px;letter-spacing:.13em;}.instructor-feature-copy h3{font-size:38px;margin-top:12px;}.instructor-feature-credentials{font-size:10px;}.instructor-feature-bio{font-size:14px;margin-top:17px;}.instructor-credentials{gap:8px;margin-top:21px;}.instructor-credentials>div{min-height:80px;padding:12px 10px;border-radius:12px;}.instructor-credentials strong{font-size:14px;}.instructor-credentials span{font-size:8px;letter-spacing:.08em;}.instructor-feature-actions{gap:11px;margin-top:23px;}.instructor-profile-link,.instructor-courses-link{min-height:44px;padding:0 15px;gap:10px;font-size:11px;}}
